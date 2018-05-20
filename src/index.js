@@ -59,7 +59,7 @@ class CoinbaseCommerce {
    * @return {Boolean}
    */
   verifyWebhookSignature(signature, body, sharedSecret) {
-    let text = (typeof body === 'string' || body instanceof String) ? body : JSON.stringify(body)
+    let text = (typeof body === 'string' || body instanceof String || Buffer.isBuffer(body)) ? body : JSON.stringify(body)
     let hash = crypto.createHmac('sha256', sharedSecret).update(text).digest('hex')
     return hash === signature
   }

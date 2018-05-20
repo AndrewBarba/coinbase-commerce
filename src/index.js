@@ -25,6 +25,7 @@ class CoinbaseCommerce {
     this._client = axios.create(clientOptions)
     this._charges = this._buildRestResource('charges')
     this._checkouts = this._buildRestResource('checkouts')
+    this._events = this._buildRestResource('events')
   }
 
   /**
@@ -39,6 +40,13 @@ class CoinbaseCommerce {
    */
   get checkouts() {
     return this._checkouts
+  }
+
+  /**
+   * @param {RestResource} events
+   */
+  get events() {
+    return this._events
   }
 
   /**
@@ -67,7 +75,8 @@ class CoinbaseCommerce {
       get: id => this._get(`/${name}/${id}`),
       list: params => this._get(`/${name}`, { params }),
       create: data => this._post(`/${name}`, { data }),
-      update: (id, data) => this._put(`/${name}/${id}`, { data })
+      update: (id, data) => this._put(`/${name}/${id}`, { data }),
+      delete: (id, params) => this._put(`/${name}/${id}`, { params })
     }
   }
 
@@ -106,6 +115,20 @@ class CoinbaseCommerce {
     return this._client.put(url, { data })
       .then(res => res.data)
   }
+
+  /**
+   * @private
+   * @method _delete
+   * @param {String} url
+   * @param {Object} [params]
+   * @return {Promise}
+   */
+  _delete(url, params = {}) {
+    return this._client.delete(url, { params })
+      .then(res => res.data)
+  }
 }
 
-module.exports = CoinbaseCommerce
+module.exports = {
+  CoinbaseCommerce
+}

@@ -16,9 +16,11 @@
     "axios": "0.18.0"
   },
   "devDependencies": {
-    "eslint": "4.19.1"
+    "eslint": "4.19.1",
+    "mocha": "5.2.0"
   },
   "scripts": {
-    "lint": "npx eslint ./"
+    "lint": "npx eslint ./",
+    "test": "npx mocha --exit --bail --slow 1000 --timeout 5000 ./test/test.js"
   }
 }

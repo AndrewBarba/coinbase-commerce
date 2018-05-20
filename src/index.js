@@ -76,7 +76,7 @@ class CoinbaseCommerce {
       list: params => this._get(`/${name}`, { params }),
       create: data => this._post(`/${name}`, { data }),
       update: (id, data) => this._put(`/${name}/${id}`, { data }),
-      delete: (id, params) => this._put(`/${name}/${id}`, { params })
+      delete: (id, params) => this._delete(`/${name}/${id}`, { params })
     }
   }
 

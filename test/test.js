@@ -1,5 +1,5 @@
 const { API_KEY } = process.env
-const { CoinbaseCommerce } = require('../src')
+const { CoinbaseCommerce } = require('../')
 
 describe('coinbase-commerce', () => {
 

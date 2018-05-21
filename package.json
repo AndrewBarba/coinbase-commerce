@@ -1,6 +1,6 @@
 {
   "name": "coinbase-commerce",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Node library for commerce.coinbase.com",
   "author": "Andrew Barba <abarba.77@gmail.com>",
   "homepage": "https://github.com/AndrewBarba/coinbase-commerce",

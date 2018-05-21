@@ -4,6 +4,10 @@
 
 ---
 
+## [1.0.3](https://github.com/AndrewBarba/coinbase-commerce/releases/tag/1.0.3)
+
+1. Package metadata
+
 ## [1.0.2](https://github.com/AndrewBarba/coinbase-commerce/releases/tag/1.0.2)
 
 1. Fix issue with post body

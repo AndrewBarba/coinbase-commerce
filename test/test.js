@@ -3,28 +3,32 @@ const { CoinbaseCommerce } = require('../src')
 
 describe('coinbase-commerce', () => {
 
-  let instance
+  let client
 
   before(() => {
     if (!API_KEY) throw new Error('Must run tests with a valid api key')
-    instance = new CoinbaseCommerce({ apiKey: API_KEY })
+    client = new CoinbaseCommerce({ apiKey: API_KEY })
   })
 
   describe('charges', () => {
     it('should list', () => {
-      return instance.charges.list()
+      return client.charges.list()
+    })
+
+    it('should create a charge', () => {
+      return client.charges.create({ pricing_type: 'no_price' })
     })
   })
 
   describe('checkouts', () => {
     it('should list', () => {
-      return instance.checkouts.list()
+      return client.checkouts.list()
     })
   })
 
   describe('events', () => {
     it('should list', () => {
-      return instance.events.list()
+      return client.events.list()
     })
   })
 })

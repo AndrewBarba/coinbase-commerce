@@ -11,7 +11,7 @@ class CoinbaseCommerce {
    * @param {String} options.apiKey
    * @param {String} [options.version]
    */
-  constructor({ apiKey, version = '2018-05-20' }) {
+  constructor({ apiKey, version = '2018-03-22' }) {
     if (!apiKey) throw new Error('apiKey is required')
 
     let clientOptions = {
@@ -72,11 +72,11 @@ class CoinbaseCommerce {
    */
   _buildRestResource(name) {
     return {
-      get: id => this._get(`/${name}/${id}`),
-      list: params => this._get(`/${name}`, { params }),
-      create: data => this._post(`/${name}`, { data }),
-      update: (id, data) => this._put(`/${name}/${id}`, { data }),
-      delete: (id, params) => this._delete(`/${name}/${id}`, { params })
+      get: id => this._request('get', `/${name}/${id}`),
+      list: params => this._request('get', `/${name}`, { params }),
+      create: data => this._request('post', `/${name}`, { data }),
+      update: (id, data) => this._request('put', `/${name}/${id}`, { data }),
+      delete: (id, params) => this._request('delete', `/${name}/${id}`, { params })
     }
   }
 
@@ -87,44 +87,8 @@ class CoinbaseCommerce {
    * @param {Object} [params]
    * @return {Promise}
    */
-  _get(url, params = {}) {
-    return this._client.get(url, { params })
-      .then(res => res.data)
-  }
-
-  /**
-   * @private
-   * @method _post
-   * @param {String} url
-   * @param {Object} [data]
-   * @return {Promise}
-   */
-  _post(url, data = {}) {
-    return this._client.post(url, { data })
-      .then(res => res.data)
-  }
-
-  /**
-   * @private
-   * @method _put
-   * @param {String} url
-   * @param {Object} [data]
-   * @return {Promise}
-   */
-  _put(url, data = {}) {
-    return this._client.put(url, { data })
-      .then(res => res.data)
-  }
-
-  /**
-   * @private
-   * @method _delete
-   * @param {String} url
-   * @param {Object} [params]
-   * @return {Promise}
-   */
-  _delete(url, params = {}) {
-    return this._client.delete(url, { params })
+  _request(method, url, { data, params }) {
+    return this._client.request({ method, url, data, params })
       .then(res => res.data)
   }
 }

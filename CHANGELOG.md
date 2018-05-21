@@ -4,6 +4,10 @@
 
 ---
 
+## [1.0.2](https://github.com/AndrewBarba/coinbase-commerce/releases/tag/1.0.2)
+
+1. Fix issue with post body
+
 ## [1.0.1](https://github.com/AndrewBarba/coinbase-commerce/releases/tag/1.0.1)
 
 1. Fix typo with internal `delete` method

@@ -3,11 +3,22 @@
   "version": "1.0.2",
   "description": "Node library for commerce.coinbase.com",
   "author": "Andrew Barba <abarba.77@gmail.com>",
+  "homepage": "https://github.com/AndrewBarba/coinbase-commerce",
   "main": "src/index.js",
-  "types": "src/index.d.ts",
+  "typings": "src/index.d.ts",
   "license": "MIT",
   "engines": {
     "node": ">=6"
+  },
+  "keywords": [
+    "coinbase",
+    "commerce",
+    "crypto",
+    "promise",
+    "axios"
+  ],
+  "bugs": {
+    "url": "https://github.com/AndrewBarba/coinbase-commerce/issues"
   },
   "repository": {
     "url": "https://github.com/AndrewBarba/coinbase-commerce"

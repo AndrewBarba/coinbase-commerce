@@ -4,8 +4,8 @@
   "description": "Node library for commerce.coinbase.com",
   "author": "Andrew Barba <abarba.77@gmail.com>",
   "homepage": "https://github.com/AndrewBarba/coinbase-commerce",
-  "main": "src/index.js",
-  "typings": "src/index.d.ts",
+  "main": "./src/index.js",
+  "types": "./src/index.d.ts",
   "license": "MIT",
   "engines": {
     "node": ">=6"

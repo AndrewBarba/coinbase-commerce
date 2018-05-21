@@ -1,5 +1,8 @@
 # Coinbase Commerce
 
+[![npm version](https://badge.fury.io/js/coinbase-commerce.svg)](https://badge.fury.io/js/coinbase-commerce)
+[![wercker status](https://app.wercker.com/status/994eb933a3d4130e70dd47eed4788568/s/master "wercker status")](https://app.wercker.com/project/byKey/994eb933a3d4130e70dd47eed4788568)
+
 Node.js library for [commerce.coinbase.com](https://commerce.coinbase.com)
 
 ## Usage

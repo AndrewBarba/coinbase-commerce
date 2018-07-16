@@ -71,12 +71,17 @@ class CoinbaseCommerce {
    * @return {RestResource}
    */
   _buildRestResource(name) {
+    let request = async (method, path = '', { data = {}, params = {} } = {}) => {
+      if (!method) throw new Error('Method is required')
+      return this._request(method, `/${name}${path}`, { params, data })
+    }
     return {
-      get: id => this._request('get', `/${name}/${id}`),
-      list: params => this._request('get', `/${name}`, { params }),
-      create: data => this._request('post', `/${name}`, { data }),
-      update: (id, data) => this._request('put', `/${name}/${id}`, { data }),
-      delete: (id, params) => this._request('delete', `/${name}/${id}`, { params })
+      request: () => request(...arguments),
+      get: id => request('get', `/${id}`),
+      list: params => request('get', '', { params }),
+      create: data => request('post', '', { data }),
+      update: (id, data) => request('put', `/${id}`, { data }),
+      delete: (id, params) => request('delete', `/${id}`, { params })
     }
   }
 
@@ -87,9 +92,9 @@ class CoinbaseCommerce {
    * @param {Object} [params]
    * @return {Promise}
    */
-  _request(method, url, { data, params }) {
-    return this._client.request({ method, url, data, params })
-      .then(res => res.data)
+  async _request(method, url, { data, params }) {
+    let res = await this._client.request({ method, url, data, params })
+    return res.data
   }
 }
 

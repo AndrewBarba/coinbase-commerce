@@ -8,6 +8,7 @@ export class CoinbaseCommerce {
 }
 
 declare interface RestResource {
+  request(method: string, path: string, options: { data?: object, params?: object }): Promise<object>
   get(id: string): Promise<object>
   list(params?: object): Promise<object>
   create(data?: object): Promise<object>

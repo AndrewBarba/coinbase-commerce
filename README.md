@@ -14,7 +14,7 @@ const { CoinbaseCommerce } = require('coinbase-commerce')
 
 let client = new CoinbaseCommerce({
   apiKey: '1234abcd-1234-abcd-1234-abcd1234abcd',
-  version: '2018-05-20' // optional
+  version: '2018-03-22' // optional
 })
 ```
 

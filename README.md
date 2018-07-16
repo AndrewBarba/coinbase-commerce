@@ -38,6 +38,12 @@ let result = await client.charges.get('66BEOV2A')
 let result = await client.charges.create(options)
 ```
 
+### Request
+
+```javascript
+let result = await client.charges.request('post', '/resolve')
+```
+
 ## Checkouts
 
 ### List

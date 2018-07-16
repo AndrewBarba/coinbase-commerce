@@ -4,6 +4,11 @@
 
 ---
 
+## [1.1.0](https://github.com/AndrewBarba/coinbase-commerce/releases/tag/1.1.0)
+
+1. Add raw `request` option to all resources
+2. Convert to async/await
+
 ## [1.0.3](https://github.com/AndrewBarba/coinbase-commerce/releases/tag/1.0.3)
 
 1. Package metadata

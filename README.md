@@ -23,22 +23,19 @@ let client = new CoinbaseCommerce({
 ### List
 
 ```javascript
-client.charges.list()
-  .then(results => {})
+let results = await client.charges.list()
 ```
 
 ### Get
 
 ```javascript
-client.charges.get('66BEOV2A')
-  .then(result => {})
+let result = await client.charges.get('66BEOV2A')
 ```
 
 ### Create
 
 ```javascript
-client.charges.create({})
-  .then(result => {})
+let result = await client.charges.create(options)
 ```
 
 ## Checkouts
@@ -46,36 +43,31 @@ client.charges.create({})
 ### List
 
 ```javascript
-client.checkouts.list()
-  .then(results => {})
+let results = await client.checkouts.list()
 ```
 
 ### Get
 
 ```javascript
-client.checkouts.get('1234abcd-1234-abcd-1234-abcd1234abcd')
-  .then(result => {})
+let result = await client.checkouts.get('1234abcd-1234-abcd-1234-abcd1234abcd')
 ```
 
 ### Create
 
 ```javascript
-client.checkouts.create({})
-  .then(result => {})
+let result = await client.checkouts.create({})
 ```
 
 ### Update
 
 ```javascript
-client.checkouts.update('1234abcd-1234-abcd-1234-abcd1234abcd', {})
-  .then(result => {})
+let result = await client.checkouts.update('1234abcd-1234-abcd-1234-abcd1234abcd', updates)
 ```
 
 ### Delete
 
 ```javascript
-client.checkouts.delete('1234abcd-1234-abcd-1234-abcd1234abcd')
-  .then(result => {})
+let result = await client.checkouts.delete('1234abcd-1234-abcd-1234-abcd1234abcd')
 ```
 
 ## Events
@@ -83,15 +75,13 @@ client.checkouts.delete('1234abcd-1234-abcd-1234-abcd1234abcd')
 ### List
 
 ```javascript
-client.events.list()
-  .then(results => {})
+let results = await client.events.list()
 ```
 
 ### Get
 
 ```javascript
-client.events.get('66BEOV2A')
-  .then(result => {})
+let result = await client.events.get('66BEOV2A')
 ```
 
 ## Webhooks
